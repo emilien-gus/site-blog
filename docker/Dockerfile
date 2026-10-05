@@ -10,8 +10,18 @@ RUN apt-get update && apt-get install -y \
 # Устанавливаем расширения PHP для работы с MySQL
 RUN docker-php-ext-install pdo pdo_mysql zip
 
-# Устанавливаем Composer (берем из официального образа)
+# Устанавливаем Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Указываем рабочую директорию
 WORKDIR /var/www/html
+
+# Копируем конфигурацию composer
+COPY composer.json composer.lock* ./
+
+# Устанавливаем зависимости
+# --prefer-dist ускоряет установку, --no-interaction убирает интерактивные вопросы
+RUN composer install --prefer-dist --no-scripts --no-interaction
+
+# Копируем исходный код проекта
+COPY . .
