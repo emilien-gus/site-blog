@@ -22,11 +22,21 @@ class View
         // Директория с шаблонами .tpl
         $this->smarty->setTemplateDir($basePath . '/src/templates');
 
+        $compileDir = $basePath . '/var/smarty/compile';
+        $cacheDir = $basePath . '/var/smarty/cache';
+
+        if (!is_dir($compileDir)) {
+            mkdir($compileDir, 0777, true);
+        }
+        if (!is_dir($cacheDir)) {
+            mkdir($cacheDir, 0777, true);
+        }
+
         // Директория для скомпилированных шаблонов (Smarty компилирует .tpl в PHP)
-        $this->smarty->setCompileDir($basePath . '/var/smarty/compile');
+        $this->smarty->setCompileDir($compileDir);
 
         // Директория для кэша
-        $this->smarty->setCacheDir($basePath . '/var/smarty/cache');
+        $this->smarty->setCacheDir($cacheDir);
     }
 
     /**

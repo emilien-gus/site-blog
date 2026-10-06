@@ -98,11 +98,18 @@ class Router
     }
 
     /**
-     * Отобразить страницу 404.
+     * Отобразить стилизованную страницу 404.
      */
     private function notFound(): void
     {
         http_response_code(404);
-        echo '404 — Страница не найдена';
+        try {
+            $view = new View();
+            $view->assign('title', '404 — Страница не найдена');
+            $view->assign('message', 'Запрошенная страница не существует или была перемещена.');
+            $view->render('404.tpl');
+        } catch (\Throwable $e) {
+            echo '404 — Страница не найдена';
+        }
     }
 }
