@@ -1,0 +1,87 @@
+// Buttons & Utility
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: $radius-sm;
+    border: none;
+    cursor: pointer;
+    transition: $transition;
+
+    &-primary {
+        background-color: $color-primary;
+        color: #ffffff;
+
+        &:hover {
+            background-color: $color-primary-hover;
+        }
+    }
+
+    &-outline {
+        background-color: transparent;
+        border: 1px solid $color-border;
+        color: $color-text;
+
+        &:hover {
+            border-color: $color-primary;
+            color: $color-primary;
+        }
+    }
+
+    &-sm {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+// Empty State
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: $color-surface;
+    border: 1px dashed $color-border;
+    border-radius: $radius-lg;
+    color: $color-text-muted;
+    max-width: 500px;
+    margin: 40px auto;
+
+    svg {
+        margin-bottom: 16px;
+        color: #94a3b8;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        color: $color-text;
+        margin-bottom: 8px;
+    }
+}
+
+// 404 Page
+.not-found {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+
+    &__code {
+        font-size: 6rem;
+        font-weight: 900;
+        line-height: 1;
+        color: $color-primary;
+        margin-bottom: 8px;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    &__message {
+        color: $color-text-muted;
+        margin-bottom: 24px;
+    }
+}

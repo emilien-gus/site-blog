@@ -9,6 +9,7 @@
         }
     },
     "scripts": {
-        "seed": "php src/seeds/DatabaseSeeder.php"
+        "seed": "php src/seeds/DatabaseSeeder.php",
+        "build-css": "php bin/compile-css.php"
     }
 }

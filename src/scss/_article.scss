@@ -1,0 +1,127 @@
+// Single Article Page
+.article-single {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    padding: 40px;
+    box-shadow: $shadow-sm;
+    margin-bottom: 48px;
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 24px;
+    }
+
+    &__header {
+        margin-bottom: 28px;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 800;
+        line-height: 1.25;
+        letter-spacing: -0.025em;
+        color: $color-text;
+        margin-bottom: 16px;
+
+        @media (max-width: $breakpoint-mobile) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 0.9rem;
+        color: $color-text-muted;
+    }
+
+    &__image-wrapper {
+        margin-bottom: 32px;
+        border-radius: $radius-md;
+        overflow: hidden;
+        max-height: 480px;
+        background-color: #e2e8f0;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        max-height: 480px;
+        object-fit: cover;
+    }
+
+    &__lead {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        font-weight: 500;
+        color: #334155;
+        padding-left: 20px;
+        border-left: 4px solid $color-primary;
+        margin-bottom: 32px;
+    }
+
+    &__content {
+        font-size: 1.1rem;
+        line-height: 1.85;
+        color: $color-text;
+        margin-bottom: 40px;
+        word-break: break-word;
+    }
+
+    &__footer {
+        padding-top: 24px;
+        border-top: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__footer-cats {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        .footer-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $color-text-muted;
+        }
+    }
+
+    &__footer-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+// Similar Articles
+.similar-articles {
+    margin-top: 60px;
+
+    &__header {
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $color-text;
+    }
+
+    &__subtitle {
+        font-size: 0.95rem;
+        color: $color-text-muted;
+    }
+}

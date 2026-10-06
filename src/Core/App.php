@@ -17,8 +17,17 @@ class App
     public function __construct()
     {
         $this->loadEnv();
+        $this->compileAssets();
         $this->router = new Router();
         $this->registerRoutes();
+    }
+
+    /**
+     * Автоматическая проверка и компиляция SCSS в CSS (при наличии изменений).
+     */
+    private function compileAssets(): void
+    {
+        (new CssCompiler())->compileIfChanged();
     }
 
     /**

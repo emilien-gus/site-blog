@@ -1,0 +1,130 @@
+// Header
+.header {
+    background-color: $color-surface;
+    border-bottom: 1px solid $color-border;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    &__logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $color-text;
+
+        .logo-mark {
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: $color-text-muted;
+            padding: 8px 14px;
+            border-radius: $radius-sm;
+
+            &:hover {
+                color: $color-primary;
+                background-color: $color-primary-light;
+            }
+        }
+    }
+}
+
+// Main Content
+.main-content {
+    flex: 1;
+    padding: 40px 0 60px;
+}
+
+// Hero
+.hero {
+    text-align: center;
+    padding: 30px 20px 48px;
+    max-width: 700px;
+    margin: 0 auto;
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: $color-text;
+        margin-bottom: 12px;
+
+        @media (max-width: $breakpoint-mobile) {
+            font-size: 2rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.15rem;
+        color: $color-text-muted;
+    }
+}
+
+// Breadcrumbs
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: $color-text-muted;
+    margin-bottom: 24px;
+
+    &__link:hover {
+        color: $color-primary;
+    }
+
+    &__separator {
+        color: #cbd5e1;
+    }
+
+    &__current {
+        color: $color-text;
+        font-weight: 500;
+    }
+}
+
+// Footer
+.footer {
+    background-color: $color-surface;
+    border-top: 1px solid $color-border;
+    padding: 24px 0;
+    margin-top: auto;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: $color-text-muted;
+
+        @media (max-width: $breakpoint-mobile) {
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+    }
+}

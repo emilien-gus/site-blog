@@ -1,0 +1,11 @@
+// Главный файл стилей проекта DevBlog
+// Собирает все модули и переменные воедино
+
+@import 'variables';
+@import 'base';
+@import 'layout';
+@import 'components';
+@import 'cards';
+@import 'category';
+@import 'article';
+@import 'pagination';
