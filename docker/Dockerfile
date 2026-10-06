@@ -25,3 +25,13 @@ RUN composer install --prefer-dist --no-scripts --no-interaction
 
 # Копируем исходный код проекта
 COPY . .
+
+# Компилируем SCSS в CSS на этапе сборки образа
+RUN php bin/compile-css.php || true
+
+# Копируем и настраиваем стартовый entrypoint-скрипт
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["php-fpm"]

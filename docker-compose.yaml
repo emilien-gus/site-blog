@@ -15,8 +15,16 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./:/var/www/html
+    depends_on:
+      - mysql
     networks:
       - app-network
 

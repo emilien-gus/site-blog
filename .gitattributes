@@ -1,0 +1,2 @@
+# Гарантируем LF переводы строк для bash/sh скриптов Docker на Windows
+*.sh text eol=lf
