@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS articles (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Промежуточная таблица для связи "Многие ко многим"
+-- Промежуточная таблица для связи "many-to-many"
 CREATE TABLE IF NOT EXISTS article_category (
     article_id INT NOT NULL,
     category_id INT NOT NULL,
